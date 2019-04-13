@@ -1,0 +1,22 @@
+{
+    "gdprLozanoApp": {
+        "tipoLey": {
+            "home": {
+                "title": "Tipolies",
+                "createLabel": "Créer un nouveau Tipo Ley",
+                "createOrEditLabel": "Créer ou éditer un Tipo Ley"
+            },
+            "created": "Un nouveau Tipo Ley a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Tipo Ley avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Tipo Ley avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Tipo Ley {{ id }} ?"
+            },
+            "detail": {
+                "title": "Tipo Ley"
+            },
+            "descripcion": "Descripcion",
+            "leyes": "Leyes"
+        }
+    }
+}

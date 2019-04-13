@@ -1,0 +1,26 @@
+{
+    "name": "TipoLey",
+    "fields": [
+        {
+            "fieldName": "descripcion",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "ley",
+            "otherEntityRelationshipName": "tipoLey",
+            "relationshipName": "leyes"
+        }
+    ],
+    "changelogDate": "20190413221636",
+    "entityTableName": "tipo_ley",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

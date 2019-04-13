@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-version-ley-int-heading" jhiTranslate="gdprLozanoApp.versionLeyInt.home.createOrEditLabel">Create or edit a Version Ley Int</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!versionLeyInt.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="versionLeyInt.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gdprLozanoApp.versionLeyInt.codLanguage" for="field_codLanguage">Cod Language</label>
+                    <input type="text" class="form-control" name="codLanguage" id="field_codLanguage"
+                        [(ngModel)]="versionLeyInt.codLanguage" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gdprLozanoApp.versionLeyInt.nombre" for="field_nombre">Nombre</label>
+                    <input type="text" class="form-control" name="nombre" id="field_nombre"
+                        [(ngModel)]="versionLeyInt.nombre" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gdprLozanoApp.versionLeyInt.descripcion" for="field_descripcion">Descripcion</label>
+                    <input type="text" class="form-control" name="descripcion" id="field_descripcion"
+                        [(ngModel)]="versionLeyInt.descripcion" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gdprLozanoApp.versionLeyInt.versionLey" for="field_versionLey">Version Ley</label>
+                    <select class="form-control" id="field_versionLey" name="versionLey" [(ngModel)]="versionLeyInt.versionLey" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="versionLeyOption.id === versionLeyInt.versionLey?.id ? versionLeyInt.versionLey : versionLeyOption" *ngFor="let versionLeyOption of versionleys; trackBy: trackVersionLeyById">{{versionLeyOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gdprLozanoApp.versionLeyInt.language" for="field_language">Language</label>
+                    <select class="form-control" id="field_language" name="language" [(ngModel)]="versionLeyInt.language" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="languageOption.id === versionLeyInt.language?.id ? versionLeyInt.language : languageOption" *ngFor="let languageOption of languages; trackBy: trackLanguageById">{{languageOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-language-heading" jhiTranslate="gdprLozanoApp.language.home.createOrEditLabel">Create or edit a Language</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!language.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="language.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gdprLozanoApp.language.codLanguage" for="field_codLanguage">Cod Language</label>
+                    <input type="text" class="form-control" name="codLanguage" id="field_codLanguage"
+                        [(ngModel)]="language.codLanguage" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gdprLozanoApp.language.codRegion" for="field_codRegion">Cod Region</label>
+                    <input type="text" class="form-control" name="codRegion" id="field_codRegion"
+                        [(ngModel)]="language.codRegion" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gdprLozanoApp.language.defaultLanguage" for="field_defaultLanguage">Default Language</label>
+                    <input type="checkbox" class="form-control" name="defaultLanguage" id="field_defaultLanguage"
+                        [(ngModel)]="language.defaultLanguage" />
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

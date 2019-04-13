@@ -8,6 +8,20 @@
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Entities",
+                "language": "Language",
+                "sistema": "Sistema",
+                "agrupacion": "Agrupacion",
+                "operacion": "Operacion",
+                "tipoLey": "Tipo Ley",
+                "ley": "Ley",
+                "versionLey": "Version Ley",
+                "versionLeyInt": "Version Ley Int",
+                "subscripcion": "Subscripcion",
+                "subscripcionInt": "Subscripcion Int",
+                "contacto": "Contacto",
+                "contactoSubscripcion": "Contacto Subscripcion",
+                "aceptaLey": "Acepta Ley",
+                "trazaPeticion": "Traza Peticion",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

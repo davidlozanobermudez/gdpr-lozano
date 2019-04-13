@@ -1,0 +1,62 @@
+{
+    "name": "Ley",
+    "fields": [
+        {
+            "fieldName": "codigo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tipologia",
+            "fieldType": "Tipologia",
+            "fieldValues": "REQUIERE_CONFIRMACION,NO_REQUIERE_CONFIRMACION"
+        },
+        {
+            "fieldName": "requiereAnonimizacion",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "plazoAnonimizado",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "aplicaAPais",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "codPais",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "tipoLey",
+            "otherEntityRelationshipName": "leyes",
+            "relationshipName": "tipoLey",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "versionLey",
+            "otherEntityRelationshipName": "ley",
+            "relationshipName": "versiones"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "agrupacion",
+            "otherEntityRelationshipName": "leyes",
+            "relationshipName": "agrupaciones",
+            "otherEntityField": "id",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20190413221637",
+    "entityTableName": "ley",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,39 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="contactoSubscripcion">
+            <h2><span jhiTranslate="gdprLozanoApp.contactoSubscripcion.detail.title">Contacto Subscripcion</span> {{contactoSubscripcion.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="gdprLozanoApp.contactoSubscripcion.fecha">Fecha</span></dt>
+                <dd>
+                    <span>{{contactoSubscripcion.fecha}}</span>
+                </dd>
+                <dt><span jhiTranslate="gdprLozanoApp.contactoSubscripcion.contacto">Contacto</span></dt>
+                <dd>
+                    <div *ngIf="contactoSubscripcion.contacto">
+                        <a [routerLink]="['/contacto', contactoSubscripcion.contacto?.id, 'view']">{{contactoSubscripcion.contacto?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="gdprLozanoApp.contactoSubscripcion.subscripcion">Subscripcion</span></dt>
+                <dd>
+                    <div *ngIf="contactoSubscripcion.subscripcion">
+                        <a [routerLink]="['/subscripcion', contactoSubscripcion.subscripcion?.id, 'view']">{{contactoSubscripcion.subscripcion?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/contacto-subscripcion', contactoSubscripcion.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

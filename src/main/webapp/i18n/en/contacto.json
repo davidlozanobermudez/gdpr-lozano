@@ -1,0 +1,30 @@
+{
+    "gdprLozanoApp": {
+        "contacto": {
+            "home": {
+                "title": "Contactos",
+                "createLabel": "Create a new Contacto",
+                "createOrEditLabel": "Create or edit a Contacto"
+            },
+            "created": "A new Contacto is created with identifier {{ param }}",
+            "updated": "A Contacto is updated with identifier {{ param }}",
+            "deleted": "A Contacto is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Contacto {{ id }}?"
+            },
+            "detail": {
+                "title": "Contacto"
+            },
+            "idCuenta": "Id Cuenta",
+            "status": "Status",
+            "email": "Email",
+            "telefono": "Telefono",
+            "codPais": "Cod Pais",
+            "codIdoma": "Cod Idoma",
+            "agrupaciones": "Agrupaciones",
+            "subscripcionesContacto": "Subscripciones Contacto",
+            "aceptacionesLey": "Aceptaciones Ley",
+            "trazasPeticion": "Trazas Peticion"
+        }
+    }
+}

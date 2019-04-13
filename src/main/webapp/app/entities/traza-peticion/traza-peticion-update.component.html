@@ -1,0 +1,70 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-traza-peticion-heading" jhiTranslate="gdprLozanoApp.trazaPeticion.home.createOrEditLabel">Create or edit a Traza Peticion</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!trazaPeticion.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="trazaPeticion.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gdprLozanoApp.trazaPeticion.tipoNotificacion" for="field_tipoNotificacion">Tipo Notificacion</label>
+                    <select class="form-control" name="tipoNotificacion" [(ngModel)]="trazaPeticion.tipoNotificacion" id="field_tipoNotificacion" >
+                        <option value="EMAIL">{{'gdprLozanoApp.TipoNotificacion.EMAIL' | translate}}</option>
+                        <option value="TELEFONO">{{'gdprLozanoApp.TipoNotificacion.TELEFONO' | translate}}</option>
+                        <option value="SISTEMA">{{'gdprLozanoApp.TipoNotificacion.SISTEMA' | translate}}</option>
+                        <option value="SMS">{{'gdprLozanoApp.TipoNotificacion.SMS' | translate}}</option>
+                        <option value="WS">{{'gdprLozanoApp.TipoNotificacion.WS' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gdprLozanoApp.trazaPeticion.nombreOperacion" for="field_nombreOperacion">Nombre Operacion</label>
+                    <select class="form-control" name="nombreOperacion" [(ngModel)]="trazaPeticion.nombreOperacion" id="field_nombreOperacion" >
+                        <option value="ACEPTACION_VERSION_LEY">{{'gdprLozanoApp.NombreOperacion.ACEPTACION_VERSION_LEY' | translate}}</option>
+                        <option value="ALTA_SUBSCRIPCION">{{'gdprLozanoApp.NombreOperacion.ALTA_SUBSCRIPCION' | translate}}</option>
+                        <option value="ANONIMIZACION_CONTACTO">{{'gdprLozanoApp.NombreOperacion.ANONIMIZACION_CONTACTO' | translate}}</option>
+                        <option value="BAJA_SUBSCRIPCION">{{'gdprLozanoApp.NombreOperacion.BAJA_SUBSCRIPCION' | translate}}</option>
+                        <option value="CONFIRMADA_BAJA_LEY">{{'gdprLozanoApp.NombreOperacion.CONFIRMADA_BAJA_LEY' | translate}}</option>
+                        <option value="CONSULTA_ESTADO_LEY">{{'gdprLozanoApp.NombreOperacion.CONSULTA_ESTADO_LEY' | translate}}</option>
+                        <option value="CREACION_CONTACTO">{{'gdprLozanoApp.NombreOperacion.CREACION_CONTACTO' | translate}}</option>
+                        <option value="DECLINACION_CONTACTO">{{'gdprLozanoApp.NombreOperacion.DECLINACION_CONTACTO' | translate}}</option>
+                        <option value="DECLINACION_VERSION_LEY">{{'gdprLozanoApp.NombreOperacion.DECLINACION_VERSION_LEY' | translate}}</option>
+                        <option value="ENVIO_LEY">{{'gdprLozanoApp.NombreOperacion.ENVIO_LEY' | translate}}</option>
+                        <option value="RECHAZO_ACEPTA_LEY_POR_VENCIMIENTO">{{'gdprLozanoApp.NombreOperacion.RECHAZO_ACEPTA_LEY_POR_VENCIMIENTO' | translate}}</option>
+                        <option value="SOLICITUD_BAJA_LEY">{{'gdprLozanoApp.NombreOperacion.SOLICITUD_BAJA_LEY' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gdprLozanoApp.trazaPeticion.fecha" for="field_fecha">Fecha</label>
+                    <div class="d-flex">
+                        <input id="field_fecha" type="datetime-local" class="form-control" name="fecha" [(ngModel)]="fecha" placeholder="YYYY-MM-DD HH:mm"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gdprLozanoApp.trazaPeticion.observaciones" for="field_observaciones">Observaciones</label>
+                    <input type="text" class="form-control" name="observaciones" id="field_observaciones"
+                        [(ngModel)]="trazaPeticion.observaciones" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gdprLozanoApp.trazaPeticion.contacto" for="field_contacto">Contacto</label>
+                    <select class="form-control" id="field_contacto" name="contacto" [(ngModel)]="trazaPeticion.contacto" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="contactoOption.id === trazaPeticion.contacto?.id ? trazaPeticion.contacto : contactoOption" *ngFor="let contactoOption of contactos; trackBy: trackContactoById">{{contactoOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

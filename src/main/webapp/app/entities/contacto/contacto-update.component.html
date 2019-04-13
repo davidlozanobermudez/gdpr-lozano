@@ -1,0 +1,63 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-contacto-heading" jhiTranslate="gdprLozanoApp.contacto.home.createOrEditLabel">Create or edit a Contacto</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!contacto.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="contacto.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gdprLozanoApp.contacto.idCuenta" for="field_idCuenta">Id Cuenta</label>
+                    <input type="text" class="form-control" name="idCuenta" id="field_idCuenta"
+                        [(ngModel)]="contacto.idCuenta" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gdprLozanoApp.contacto.status" for="field_status">Status</label>
+                    <select class="form-control" name="status" [(ngModel)]="contacto.status" id="field_status" >
+                        <option value="ACTIVO">{{'gdprLozanoApp.StatusContacto.ACTIVO' | translate}}</option>
+                        <option value="PENDIENTE_ANONIMIZACION">{{'gdprLozanoApp.StatusContacto.PENDIENTE_ANONIMIZACION' | translate}}</option>
+                        <option value="RECHAZADO">{{'gdprLozanoApp.StatusContacto.RECHAZADO' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gdprLozanoApp.contacto.email" for="field_email">Email</label>
+                    <input type="text" class="form-control" name="email" id="field_email"
+                        [(ngModel)]="contacto.email" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gdprLozanoApp.contacto.telefono" for="field_telefono">Telefono</label>
+                    <input type="text" class="form-control" name="telefono" id="field_telefono"
+                        [(ngModel)]="contacto.telefono" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gdprLozanoApp.contacto.codPais" for="field_codPais">Cod Pais</label>
+                    <input type="text" class="form-control" name="codPais" id="field_codPais"
+                        [(ngModel)]="contacto.codPais" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gdprLozanoApp.contacto.codIdoma" for="field_codIdoma">Cod Idoma</label>
+                    <input type="text" class="form-control" name="codIdoma" id="field_codIdoma"
+                        [(ngModel)]="contacto.codIdoma" />
+                </div>
+
+                <div class="form-group">
+                    <label jhiTranslate="gdprLozanoApp.contacto.agrupaciones" for="field_agrupaciones">Agrupaciones</label>
+                    <select class="form-control" id="field_agrupaciones" multiple name="agrupaciones" [(ngModel)]="contacto.agrupaciones">
+                        <option [ngValue]="getSelected(contacto.agrupaciones, agrupacionOption)" *ngFor="let agrupacionOption of agrupacions; trackBy: trackAgrupacionById">{{agrupacionOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

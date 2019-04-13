@@ -1,0 +1,12 @@
+{
+    "gdprLozanoApp": {
+        "TipoNotificacion": {
+            "null": "",
+            "EMAIL": "EMAIL",
+            "TELEFONO": "TELEFONO",
+            "SISTEMA": "SISTEMA",
+            "SMS": "SMS",
+            "WS": "WS"
+        }
+    }
+}

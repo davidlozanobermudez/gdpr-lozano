@@ -1,0 +1,40 @@
+{
+    "name": "Language",
+    "fields": [
+        {
+            "fieldName": "codLanguage",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "codRegion",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "defaultLanguage",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "versionLeyInt",
+            "otherEntityRelationshipName": "language",
+            "relationshipName": "versionLeyInt"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "subscripcionInt",
+            "otherEntityRelationshipName": "language",
+            "relationshipName": "subscripcionInt"
+        }
+    ],
+    "changelogDate": "20190413221632",
+    "entityTableName": "language",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

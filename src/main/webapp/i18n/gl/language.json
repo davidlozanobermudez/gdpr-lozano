@@ -1,0 +1,25 @@
+{
+    "gdprLozanoApp": {
+        "language": {
+            "home": {
+                "title": "Languages",
+                "createLabel": "Crear novo Language",
+                "createOrEditLabel": "Crear ou editar Language"
+            },
+            "created": "Un novo Language foi creado co identificador {{ param }}",
+            "updated": "Un Language foi actualizado co identificador {{ param }}",
+            "deleted": "Un Language foi eliminado co identificador {{ param }}",
+            "delete": {
+                "question": "Seguro que desexa eliminar Language {{ id }}?"
+            },
+            "detail": {
+                "title": "Language"
+            },
+            "codLanguage": "Cod Language",
+            "codRegion": "Cod Region",
+            "defaultLanguage": "Default Language",
+            "versionLeyInt": "Version Ley Int",
+            "subscripcionInt": "Subscripcion Int"
+        }
+    }
+}

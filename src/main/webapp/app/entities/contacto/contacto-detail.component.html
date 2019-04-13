@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="contacto">
+            <h2><span jhiTranslate="gdprLozanoApp.contacto.detail.title">Contacto</span> {{contacto.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="gdprLozanoApp.contacto.idCuenta">Id Cuenta</span></dt>
+                <dd>
+                    <span>{{contacto.idCuenta}}</span>
+                </dd>
+                <dt><span jhiTranslate="gdprLozanoApp.contacto.status">Status</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'gdprLozanoApp.StatusContacto.' + contacto.status}}">{{contacto.status}}</span>
+                </dd>
+                <dt><span jhiTranslate="gdprLozanoApp.contacto.email">Email</span></dt>
+                <dd>
+                    <span>{{contacto.email}}</span>
+                </dd>
+                <dt><span jhiTranslate="gdprLozanoApp.contacto.telefono">Telefono</span></dt>
+                <dd>
+                    <span>{{contacto.telefono}}</span>
+                </dd>
+                <dt><span jhiTranslate="gdprLozanoApp.contacto.codPais">Cod Pais</span></dt>
+                <dd>
+                    <span>{{contacto.codPais}}</span>
+                </dd>
+                <dt><span jhiTranslate="gdprLozanoApp.contacto.codIdoma">Cod Idoma</span></dt>
+                <dd>
+                    <span>{{contacto.codIdoma}}</span>
+                </dd>
+                <dt><span jhiTranslate="gdprLozanoApp.contacto.agrupaciones">Agrupaciones</span></dt>
+                <dd>
+                    <span *ngFor="let agrupaciones of contacto.agrupaciones; let last = last">
+                        <a [routerLink]="['/agrupacion', agrupaciones?.id, 'view' ]">{{agrupaciones.id}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/contacto', contacto.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

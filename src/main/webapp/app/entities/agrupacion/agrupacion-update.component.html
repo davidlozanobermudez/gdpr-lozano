@@ -1,0 +1,47 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-agrupacion-heading" jhiTranslate="gdprLozanoApp.agrupacion.home.createOrEditLabel">Create or edit a Agrupacion</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!agrupacion.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="agrupacion.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gdprLozanoApp.agrupacion.codigo" for="field_codigo">Codigo</label>
+                    <input type="text" class="form-control" name="codigo" id="field_codigo"
+                        [(ngModel)]="agrupacion.codigo" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gdprLozanoApp.agrupacion.nombre" for="field_nombre">Nombre</label>
+                    <input type="text" class="form-control" name="nombre" id="field_nombre"
+                        [(ngModel)]="agrupacion.nombre" />
+                </div>
+
+                <div class="form-group">
+                    <label jhiTranslate="gdprLozanoApp.agrupacion.leyes" for="field_leyes">Leyes</label>
+                    <select class="form-control" id="field_leyes" multiple name="leyes" [(ngModel)]="agrupacion.leyes">
+                        <option [ngValue]="getSelected(agrupacion.leyes, leyOption)" *ngFor="let leyOption of leys; trackBy: trackLeyById">{{leyOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gdprLozanoApp.agrupacion.operaciones" for="field_operaciones">Operaciones</label>
+                    <select class="form-control" id="field_operaciones" name="operaciones" [(ngModel)]="agrupacion.operaciones" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="operacionOption.id === agrupacion.operaciones?.id ? agrupacion.operaciones : operacionOption" *ngFor="let operacionOption of operacions; trackBy: trackOperacionById">{{operacionOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

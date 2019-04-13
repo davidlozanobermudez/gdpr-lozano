@@ -1,0 +1,32 @@
+{
+    "name": "Subscripcion",
+    "fields": [
+        {
+            "fieldName": "codigo",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "subscripcionInt",
+            "otherEntityRelationshipName": "subscripcion",
+            "relationshipName": "langs"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "contactoSubscripcion",
+            "otherEntityRelationshipName": "subscripcion",
+            "relationshipName": "subscripcionesContacto"
+        }
+    ],
+    "changelogDate": "20190413221640",
+    "entityTableName": "subscripcion",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

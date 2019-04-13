@@ -1,0 +1,25 @@
+{
+    "gdprLozanoApp": {
+        "agrupacion": {
+            "home": {
+                "title": "Agrupacions",
+                "createLabel": "Criar um(a) novo(a) Agrupacion",
+                "createOrEditLabel": "Criar ou editar um(a) Agrupacion"
+            },
+            "created": "A new Agrupacion is created with identifier {{ param }}",
+            "updated": "A Agrupacion is updated with identifier {{ param }}",
+            "deleted": "A Agrupacion is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Tem a certeza que pretende eliminar o(a) Agrupacion {{ id }}?"
+            },
+            "detail": {
+                "title": "Agrupacion"
+            },
+            "codigo": "Codigo",
+            "nombre": "Nombre",
+            "leyes": "Leyes",
+            "operaciones": "Operaciones",
+            "contactos": "Contactos"
+        }
+    }
+}

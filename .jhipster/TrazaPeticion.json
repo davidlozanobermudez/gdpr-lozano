@@ -1,0 +1,41 @@
+{
+    "name": "TrazaPeticion",
+    "fields": [
+        {
+            "fieldName": "tipoNotificacion",
+            "fieldType": "TipoNotificacion",
+            "fieldValues": "EMAIL,TELEFONO,SISTEMA,SMS,WS"
+        },
+        {
+            "fieldName": "nombreOperacion",
+            "fieldType": "NombreOperacion",
+            "fieldValues": "ACEPTACION_VERSION_LEY,ALTA_SUBSCRIPCION,ANONIMIZACION_CONTACTO,BAJA_SUBSCRIPCION,CONFIRMADA_BAJA_LEY,CONSULTA_ESTADO_LEY,CREACION_CONTACTO,DECLINACION_CONTACTO,DECLINACION_VERSION_LEY,ENVIO_LEY,RECHAZO_ACEPTA_LEY_POR_VENCIMIENTO,SOLICITUD_BAJA_LEY"
+        },
+        {
+            "fieldName": "fecha",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "observaciones",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "contacto",
+            "otherEntityRelationshipName": "trazasPeticion",
+            "relationshipName": "contacto",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190413221645",
+    "entityTableName": "traza_peticion",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

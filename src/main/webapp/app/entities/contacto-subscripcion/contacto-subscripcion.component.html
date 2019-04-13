@@ -1,0 +1,66 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="gdprLozanoApp.contactoSubscripcion.home.title">Contacto Subscripcions</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-contacto-subscripcion" [routerLink]="['/contacto-subscripcion/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="gdprLozanoApp.contactoSubscripcion.home.createLabel">
+            Create new Contacto Subscripcion
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="contactoSubscripcions">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="gdprLozanoApp.contactoSubscripcion.fecha">Fecha</span></th>
+            <th><span jhiTranslate="gdprLozanoApp.contactoSubscripcion.contacto">Contacto</span></th>
+            <th><span jhiTranslate="gdprLozanoApp.contactoSubscripcion.subscripcion">Subscripcion</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let contactoSubscripcion of contactoSubscripcions ;trackBy: trackId">
+                <td><a [routerLink]="['/contacto-subscripcion', contactoSubscripcion.id, 'view' ]">{{contactoSubscripcion.id}}</a></td>
+                <td>{{contactoSubscripcion.fecha | date:'medium'}}</td>
+                <td>
+                    <div *ngIf="contactoSubscripcion.contacto">
+                        <a [routerLink]="['../contacto', contactoSubscripcion.contacto?.id, 'view' ]" >{{contactoSubscripcion.contacto?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="contactoSubscripcion.subscripcion">
+                        <a [routerLink]="['../subscripcion', contactoSubscripcion.subscripcion?.id, 'view' ]" >{{contactoSubscripcion.subscripcion?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/contacto-subscripcion', contactoSubscripcion.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/contacto-subscripcion', contactoSubscripcion.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'contacto-subscripcion', { outlets: { popup: contactoSubscripcion.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

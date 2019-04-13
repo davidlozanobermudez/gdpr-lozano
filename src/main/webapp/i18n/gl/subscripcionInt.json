@@ -1,0 +1,25 @@
+{
+    "gdprLozanoApp": {
+        "subscripcionInt": {
+            "home": {
+                "title": "SubscripcionInts",
+                "createLabel": "Crear novo Subscripcion Int",
+                "createOrEditLabel": "Crear ou editar Subscripcion Int"
+            },
+            "created": "Un novo Subscripcion Int foi creado co identificador {{ param }}",
+            "updated": "Un Subscripcion Int foi actualizado co identificador {{ param }}",
+            "deleted": "Un Subscripcion Int foi eliminado co identificador {{ param }}",
+            "delete": {
+                "question": "Seguro que desexa eliminar Subscripcion Int {{ id }}?"
+            },
+            "detail": {
+                "title": "Subscripcion Int"
+            },
+            "codLanguage": "Cod Language",
+            "nombre": "Nombre",
+            "descripcion": "Descripcion",
+            "subscripcion": "Subscripcion",
+            "language": "Language"
+        }
+    }
+}

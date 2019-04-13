@@ -1,0 +1,72 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="gdprLozanoApp.aceptaLey.home.title">Acepta Leys</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-acepta-ley" [routerLink]="['/acepta-ley/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="gdprLozanoApp.aceptaLey.home.createLabel">
+            Create new Acepta Ley
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="aceptaLeys">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="gdprLozanoApp.aceptaLey.enviada">Enviada</span></th>
+            <th><span jhiTranslate="gdprLozanoApp.aceptaLey.fechaEnvio">Fecha Envio</span></th>
+            <th><span jhiTranslate="gdprLozanoApp.aceptaLey.aceptada">Aceptada</span></th>
+            <th><span jhiTranslate="gdprLozanoApp.aceptaLey.fechaAceptacion">Fecha Aceptacion</span></th>
+            <th><span jhiTranslate="gdprLozanoApp.aceptaLey.contacto">Contacto</span></th>
+            <th><span jhiTranslate="gdprLozanoApp.aceptaLey.versionLey">Version Ley</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let aceptaLey of aceptaLeys ;trackBy: trackId">
+                <td><a [routerLink]="['/acepta-ley', aceptaLey.id, 'view' ]">{{aceptaLey.id}}</a></td>
+                <td>{{aceptaLey.enviada}}</td>
+                <td>{{aceptaLey.fechaEnvio | date:'medium'}}</td>
+                <td>{{aceptaLey.aceptada}}</td>
+                <td>{{aceptaLey.fechaAceptacion | date:'medium'}}</td>
+                <td>
+                    <div *ngIf="aceptaLey.contacto">
+                        <a [routerLink]="['../contacto', aceptaLey.contacto?.id, 'view' ]" >{{aceptaLey.contacto?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="aceptaLey.versionLey">
+                        <a [routerLink]="['../version-ley', aceptaLey.versionLey?.id, 'view' ]" >{{aceptaLey.versionLey?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/acepta-ley', aceptaLey.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/acepta-ley', aceptaLey.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'acepta-ley', { outlets: { popup: aceptaLey.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

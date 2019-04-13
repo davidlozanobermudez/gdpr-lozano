@@ -1,0 +1,9 @@
+{
+    "gdprLozanoApp": {
+        "Tipologia": {
+            "null": "",
+            "REQUIERE_CONFIRMACION": "REQUIERE_CONFIRMACION",
+            "NO_REQUIERE_CONFIRMACION": "NO_REQUIERE_CONFIRMACION"
+        }
+    }
+}

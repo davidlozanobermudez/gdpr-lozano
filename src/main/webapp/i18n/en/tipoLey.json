@@ -1,0 +1,22 @@
+{
+    "gdprLozanoApp": {
+        "tipoLey": {
+            "home": {
+                "title": "Tipolies",
+                "createLabel": "Create a new Tipo Ley",
+                "createOrEditLabel": "Create or edit a Tipo Ley"
+            },
+            "created": "A new Tipo Ley is created with identifier {{ param }}",
+            "updated": "A Tipo Ley is updated with identifier {{ param }}",
+            "deleted": "A Tipo Ley is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Tipo Ley {{ id }}?"
+            },
+            "detail": {
+                "title": "Tipo Ley"
+            },
+            "descripcion": "Descripcion",
+            "leyes": "Leyes"
+        }
+    }
+}

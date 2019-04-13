@@ -1,0 +1,22 @@
+{
+    "gdprLozanoApp": {
+        "sistema": {
+            "home": {
+                "title": "Sistemas",
+                "createLabel": "Criar um(a) novo(a) Sistema",
+                "createOrEditLabel": "Criar ou editar um(a) Sistema"
+            },
+            "created": "A new Sistema is created with identifier {{ param }}",
+            "updated": "A Sistema is updated with identifier {{ param }}",
+            "deleted": "A Sistema is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Tem a certeza que pretende eliminar o(a) Sistema {{ id }}?"
+            },
+            "detail": {
+                "title": "Sistema"
+            },
+            "nombre": "Nombre",
+            "operaciones": "Operaciones"
+        }
+    }
+}

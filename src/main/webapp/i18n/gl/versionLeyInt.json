@@ -1,0 +1,25 @@
+{
+    "gdprLozanoApp": {
+        "versionLeyInt": {
+            "home": {
+                "title": "VersionLeyInts",
+                "createLabel": "Crear novo Version Ley Int",
+                "createOrEditLabel": "Crear ou editar Version Ley Int"
+            },
+            "created": "Un novo Version Ley Int foi creado co identificador {{ param }}",
+            "updated": "Un Version Ley Int foi actualizado co identificador {{ param }}",
+            "deleted": "Un Version Ley Int foi eliminado co identificador {{ param }}",
+            "delete": {
+                "question": "Seguro que desexa eliminar Version Ley Int {{ id }}?"
+            },
+            "detail": {
+                "title": "Version Ley Int"
+            },
+            "codLanguage": "Cod Language",
+            "nombre": "Nombre",
+            "descripcion": "Descripcion",
+            "versionLey": "Version Ley",
+            "language": "Language"
+        }
+    }
+}

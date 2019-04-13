@@ -5,6 +5,30 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190413221632_added_entity_Language.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190413221633_added_entity_Sistema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190413221634_added_entity_Agrupacion.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190413221635_added_entity_Operacion.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190413221636_added_entity_TipoLey.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190413221637_added_entity_Ley.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190413221638_added_entity_VersionLey.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190413221639_added_entity_VersionLeyInt.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190413221640_added_entity_Subscripcion.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190413221641_added_entity_SubscripcionInt.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190413221642_added_entity_Contacto.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190413221643_added_entity_ContactoSubscripcion.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190413221644_added_entity_AceptaLey.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190413221645_added_entity_TrazaPeticion.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20190413221633_added_entity_constraints_Sistema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190413221634_added_entity_constraints_Agrupacion.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190413221637_added_entity_constraints_Ley.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190413221638_added_entity_constraints_VersionLey.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190413221639_added_entity_constraints_VersionLeyInt.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190413221641_added_entity_constraints_SubscripcionInt.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190413221642_added_entity_constraints_Contacto.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190413221643_added_entity_constraints_ContactoSubscripcion.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190413221644_added_entity_constraints_AceptaLey.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190413221645_added_entity_constraints_TrazaPeticion.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

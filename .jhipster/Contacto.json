@@ -1,0 +1,67 @@
+{
+    "name": "Contacto",
+    "fields": [
+        {
+            "fieldName": "idCuenta",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "StatusContacto",
+            "fieldValues": "ACTIVO,PENDIENTE_ANONIMIZACION,RECHAZADO"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "telefono",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "codPais",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "codIdoma",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "agrupacion",
+            "otherEntityRelationshipName": "contactos",
+            "relationshipName": "agrupaciones",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "contactoSubscripcion",
+            "otherEntityRelationshipName": "contacto",
+            "relationshipName": "subscripcionesContacto"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "aceptaLey",
+            "otherEntityRelationshipName": "contacto",
+            "relationshipName": "aceptacionesLey"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "trazaPeticion",
+            "otherEntityRelationshipName": "contacto",
+            "relationshipName": "trazasPeticion"
+        }
+    ],
+    "changelogDate": "20190413221642",
+    "entityTableName": "contacto",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

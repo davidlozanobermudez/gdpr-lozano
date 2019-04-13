@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="ley">
+            <h2><span jhiTranslate="gdprLozanoApp.ley.detail.title">Ley</span> {{ley.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="gdprLozanoApp.ley.codigo">Codigo</span></dt>
+                <dd>
+                    <span>{{ley.codigo}}</span>
+                </dd>
+                <dt><span jhiTranslate="gdprLozanoApp.ley.tipologia">Tipologia</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'gdprLozanoApp.Tipologia.' + ley.tipologia}}">{{ley.tipologia}}</span>
+                </dd>
+                <dt><span jhiTranslate="gdprLozanoApp.ley.requiereAnonimizacion">Requiere Anonimizacion</span></dt>
+                <dd>
+                    <span>{{ley.requiereAnonimizacion}}</span>
+                </dd>
+                <dt><span jhiTranslate="gdprLozanoApp.ley.plazoAnonimizado">Plazo Anonimizado</span></dt>
+                <dd>
+                    <span>{{ley.plazoAnonimizado}}</span>
+                </dd>
+                <dt><span jhiTranslate="gdprLozanoApp.ley.aplicaAPais">Aplica A Pais</span></dt>
+                <dd>
+                    <span>{{ley.aplicaAPais}}</span>
+                </dd>
+                <dt><span jhiTranslate="gdprLozanoApp.ley.codPais">Cod Pais</span></dt>
+                <dd>
+                    <span>{{ley.codPais}}</span>
+                </dd>
+                <dt><span jhiTranslate="gdprLozanoApp.ley.tipoLey">Tipo Ley</span></dt>
+                <dd>
+                    <div *ngIf="ley.tipoLey">
+                        <a [routerLink]="['/tipo-ley', ley.tipoLey?.id, 'view']">{{ley.tipoLey?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/ley', ley.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity AceptaLey.
+    -->
+    <changeSet id="20190413221644-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="contacto_id"
+                                 baseTableName="acepta_ley"
+                                 constraintName="fk_acepta_ley_contacto_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="contacto"/>
+
+        <addForeignKeyConstraint baseColumnNames="version_ley_id"
+                                 baseTableName="acepta_ley"
+                                 constraintName="fk_acepta_ley_version_ley_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="version_ley"/>
+
+    </changeSet>
+</databaseChangeLog>

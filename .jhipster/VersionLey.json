@@ -1,0 +1,43 @@
+{
+    "name": "VersionLey",
+    "fields": [
+        {
+            "fieldName": "version",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fechaDesde",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "versionLeyInt",
+            "otherEntityRelationshipName": "versionLey",
+            "relationshipName": "langs"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "ley",
+            "otherEntityRelationshipName": "versiones",
+            "relationshipName": "ley",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "aceptaLey",
+            "otherEntityRelationshipName": "versionLey",
+            "relationshipName": "aceptacionesLey"
+        }
+    ],
+    "changelogDate": "20190413221638",
+    "entityTableName": "version_ley",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
