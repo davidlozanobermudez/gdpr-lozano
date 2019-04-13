@@ -1,0 +1,47 @@
+{
+  "generator-jhipster": {
+    "applicationType": "monolith",
+    "gitCompany": "",
+    "baseName": "gdprLozano",
+    "packageName": "es.aldaba.gdpr",
+    "packageFolder": "es/aldaba/gdpr",
+    "serverPort": 8080,
+    "serviceDiscoveryType": false,
+    "authenticationType": "jwt",
+    "uaaBaseName": "../uaa",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mariadb",
+    "searchEngine": false,
+    "enableSwaggerCodegen": false,
+    "messageBroker": false,
+    "buildTool": "gradle",
+    "useSass": false,
+    "clientPackageManager": "npm",
+    "testFrameworks": [
+      "protractor"
+    ],
+    "enableTranslation": true,
+    "nativeLanguage": "es",
+    "languages": [
+      "en",
+      "fr",
+      "gl",
+      "pt-pt",
+      "es"
+    ],
+    "clientFramework": "angularX",
+    "jhiPrefix": "jhi",
+    "jhipsterVersion": "5.8.2",
+    "jwtSecretKey": "MTYzY2Y1MjhjZjNjNTBkNjAxNTI4OWNhNWQzODY3YmVmYTdiOGQxNzI3YmRlZjVhNjFlMGQxYjI2MTdiYzM3MDRkOGM2OTJmZDQ0MjFhMTI0MTY4ZTIyZTY2Y2NjYjBlYmI2ZTdjYWIyYzJkYzIxODQ2MDQ3YjRhNjMzY2E2MjM=",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": []
+  },
+  "git-provider": "GitHub",
+  "git-company": "davidlozanobermudez",
+  "repository-name": "gdpr-lozano"
+}
