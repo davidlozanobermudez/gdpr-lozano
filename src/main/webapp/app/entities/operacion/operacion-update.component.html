@@ -1,0 +1,44 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-operacion-heading" jhiTranslate="gdprLozanoApp.operacion.home.createOrEditLabel">Create or edit a Operacion</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!operacion.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="operacion.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gdprLozanoApp.operacion.codigo" for="field_codigo">Codigo</label>
+                    <input type="text" class="form-control" name="codigo" id="field_codigo"
+                        [(ngModel)]="operacion.codigo" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gdprLozanoApp.operacion.wsAsociado" for="field_wsAsociado">Ws Asociado</label>
+                    <input type="text" class="form-control" name="wsAsociado" id="field_wsAsociado"
+                        [(ngModel)]="operacion.wsAsociado" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gdprLozanoApp.operacion.tipo" for="field_tipo">Tipo</label>
+                    <select class="form-control" name="tipo" [(ngModel)]="operacion.tipo" id="field_tipo" >
+                        <option value="GET">{{'gdprLozanoApp.TipoOperacion.GET' | translate}}</option>
+                        <option value="POST">{{'gdprLozanoApp.TipoOperacion.POST' | translate}}</option>
+                        <option value="PUT">{{'gdprLozanoApp.TipoOperacion.PUT' | translate}}</option>
+                        <option value="DELETE">{{'gdprLozanoApp.TipoOperacion.DELETE' | translate}}</option>
+                        <option value="JDSFKJEF">{{'gdprLozanoApp.TipoOperacion.JDSFKJEF' | translate}}</option>
+                    </select>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

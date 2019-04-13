@@ -1,0 +1,51 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="aceptaLey">
+            <h2><span jhiTranslate="gdprLozanoApp.aceptaLey.detail.title">Acepta Ley</span> {{aceptaLey.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="gdprLozanoApp.aceptaLey.enviada">Enviada</span></dt>
+                <dd>
+                    <span>{{aceptaLey.enviada}}</span>
+                </dd>
+                <dt><span jhiTranslate="gdprLozanoApp.aceptaLey.fechaEnvio">Fecha Envio</span></dt>
+                <dd>
+                    <span>{{aceptaLey.fechaEnvio}}</span>
+                </dd>
+                <dt><span jhiTranslate="gdprLozanoApp.aceptaLey.aceptada">Aceptada</span></dt>
+                <dd>
+                    <span>{{aceptaLey.aceptada}}</span>
+                </dd>
+                <dt><span jhiTranslate="gdprLozanoApp.aceptaLey.fechaAceptacion">Fecha Aceptacion</span></dt>
+                <dd>
+                    <span>{{aceptaLey.fechaAceptacion}}</span>
+                </dd>
+                <dt><span jhiTranslate="gdprLozanoApp.aceptaLey.contacto">Contacto</span></dt>
+                <dd>
+                    <div *ngIf="aceptaLey.contacto">
+                        <a [routerLink]="['/contacto', aceptaLey.contacto?.id, 'view']">{{aceptaLey.contacto?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="gdprLozanoApp.aceptaLey.versionLey">Version Ley</span></dt>
+                <dd>
+                    <div *ngIf="aceptaLey.versionLey">
+                        <a [routerLink]="['/version-ley', aceptaLey.versionLey?.id, 'view']">{{aceptaLey.versionLey?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/acepta-ley', aceptaLey.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

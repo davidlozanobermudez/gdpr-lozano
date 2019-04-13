@@ -1,0 +1,25 @@
+{
+    "gdprLozanoApp": {
+        "trazaPeticion": {
+            "home": {
+                "title": "TrazaPeticions",
+                "createLabel": "Crear novo Traza Peticion",
+                "createOrEditLabel": "Crear ou editar Traza Peticion"
+            },
+            "created": "Un novo Traza Peticion foi creado co identificador {{ param }}",
+            "updated": "Un Traza Peticion foi actualizado co identificador {{ param }}",
+            "deleted": "Un Traza Peticion foi eliminado co identificador {{ param }}",
+            "delete": {
+                "question": "Seguro que desexa eliminar Traza Peticion {{ id }}?"
+            },
+            "detail": {
+                "title": "Traza Peticion"
+            },
+            "tipoNotificacion": "Tipo Notificacion",
+            "nombreOperacion": "Nombre Operacion",
+            "fecha": "Fecha",
+            "observaciones": "Observaciones",
+            "contacto": "Contacto"
+        }
+    }
+}

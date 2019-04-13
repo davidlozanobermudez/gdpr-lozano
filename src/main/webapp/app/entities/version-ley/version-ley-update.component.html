@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-version-ley-heading" jhiTranslate="gdprLozanoApp.versionLey.home.createOrEditLabel">Create or edit a Version Ley</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!versionLey.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="versionLey.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gdprLozanoApp.versionLey.version" for="field_version">Version</label>
+                    <input type="text" class="form-control" name="version" id="field_version"
+                        [(ngModel)]="versionLey.version" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gdprLozanoApp.versionLey.fechaDesde" for="field_fechaDesde">Fecha Desde</label>
+                    <div class="input-group">
+                        <input id="field_fechaDesde" type="text" class="form-control" name="fechaDesde" ngbDatepicker  #fechaDesdeDp="ngbDatepicker" [(ngModel)]="versionLey.fechaDesde"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="fechaDesdeDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gdprLozanoApp.versionLey.ley" for="field_ley">Ley</label>
+                    <select class="form-control" id="field_ley" name="ley" [(ngModel)]="versionLey.ley" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="leyOption.id === versionLey.ley?.id ? versionLey.ley : leyOption" *ngFor="let leyOption of leys; trackBy: trackLeyById">{{leyOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

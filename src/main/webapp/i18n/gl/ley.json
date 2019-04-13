@@ -1,0 +1,29 @@
+{
+    "gdprLozanoApp": {
+        "ley": {
+            "home": {
+                "title": "Leys",
+                "createLabel": "Crear novo Ley",
+                "createOrEditLabel": "Crear ou editar Ley"
+            },
+            "created": "Un novo Ley foi creado co identificador {{ param }}",
+            "updated": "Un Ley foi actualizado co identificador {{ param }}",
+            "deleted": "Un Ley foi eliminado co identificador {{ param }}",
+            "delete": {
+                "question": "Seguro que desexa eliminar Ley {{ id }}?"
+            },
+            "detail": {
+                "title": "Ley"
+            },
+            "codigo": "Codigo",
+            "tipologia": "Tipologia",
+            "requiereAnonimizacion": "Requiere Anonimizacion",
+            "plazoAnonimizado": "Plazo Anonimizado",
+            "aplicaAPais": "Aplica A Pais",
+            "codPais": "Cod Pais",
+            "tipoLey": "Tipo Ley",
+            "versiones": "Versiones",
+            "agrupaciones": "Agrupaciones"
+        }
+    }
+}

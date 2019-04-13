@@ -1,0 +1,49 @@
+{
+    "name": "AceptaLey",
+    "fields": [
+        {
+            "fieldName": "enviada",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "fechaEnvio",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "aceptada",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "fechaAceptacion",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "contacto",
+            "otherEntityRelationshipName": "aceptacionesLey",
+            "relationshipName": "contacto",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "versionLey",
+            "otherEntityRelationshipName": "aceptacionesLey",
+            "relationshipName": "versionLey",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190413221644",
+    "entityTableName": "acepta_ley",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

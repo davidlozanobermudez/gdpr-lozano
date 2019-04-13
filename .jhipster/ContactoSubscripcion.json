@@ -1,0 +1,34 @@
+{
+    "name": "ContactoSubscripcion",
+    "fields": [
+        {
+            "fieldName": "fecha",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "contacto",
+            "otherEntityRelationshipName": "subscripcionesContacto",
+            "relationshipName": "contacto",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "subscripcion",
+            "otherEntityRelationshipName": "subscripcionesContacto",
+            "relationshipName": "subscripcion",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190413221643",
+    "entityTableName": "contacto_subscripcion",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

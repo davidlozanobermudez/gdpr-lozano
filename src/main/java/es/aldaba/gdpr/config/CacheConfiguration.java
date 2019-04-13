@@ -38,6 +38,37 @@ public class CacheConfiguration {
             cm.createCache(es.aldaba.gdpr.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(es.aldaba.gdpr.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(es.aldaba.gdpr.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(es.aldaba.gdpr.domain.Language.class.getName(), jcacheConfiguration);
+            cm.createCache(es.aldaba.gdpr.domain.Language.class.getName() + ".versionLeyInts", jcacheConfiguration);
+            cm.createCache(es.aldaba.gdpr.domain.Language.class.getName() + ".subscripcionInts", jcacheConfiguration);
+            cm.createCache(es.aldaba.gdpr.domain.Sistema.class.getName(), jcacheConfiguration);
+            cm.createCache(es.aldaba.gdpr.domain.Agrupacion.class.getName(), jcacheConfiguration);
+            cm.createCache(es.aldaba.gdpr.domain.Agrupacion.class.getName() + ".leyes", jcacheConfiguration);
+            cm.createCache(es.aldaba.gdpr.domain.Agrupacion.class.getName() + ".contactos", jcacheConfiguration);
+            cm.createCache(es.aldaba.gdpr.domain.Operacion.class.getName(), jcacheConfiguration);
+            cm.createCache(es.aldaba.gdpr.domain.Operacion.class.getName() + ".sistemas", jcacheConfiguration);
+            cm.createCache(es.aldaba.gdpr.domain.Operacion.class.getName() + ".agrupacions", jcacheConfiguration);
+            cm.createCache(es.aldaba.gdpr.domain.TipoLey.class.getName(), jcacheConfiguration);
+            cm.createCache(es.aldaba.gdpr.domain.TipoLey.class.getName() + ".leyes", jcacheConfiguration);
+            cm.createCache(es.aldaba.gdpr.domain.Ley.class.getName(), jcacheConfiguration);
+            cm.createCache(es.aldaba.gdpr.domain.Ley.class.getName() + ".versiones", jcacheConfiguration);
+            cm.createCache(es.aldaba.gdpr.domain.Ley.class.getName() + ".agrupaciones", jcacheConfiguration);
+            cm.createCache(es.aldaba.gdpr.domain.VersionLey.class.getName(), jcacheConfiguration);
+            cm.createCache(es.aldaba.gdpr.domain.VersionLey.class.getName() + ".langs", jcacheConfiguration);
+            cm.createCache(es.aldaba.gdpr.domain.VersionLey.class.getName() + ".aceptacionesLeys", jcacheConfiguration);
+            cm.createCache(es.aldaba.gdpr.domain.VersionLeyInt.class.getName(), jcacheConfiguration);
+            cm.createCache(es.aldaba.gdpr.domain.Subscripcion.class.getName(), jcacheConfiguration);
+            cm.createCache(es.aldaba.gdpr.domain.Subscripcion.class.getName() + ".langs", jcacheConfiguration);
+            cm.createCache(es.aldaba.gdpr.domain.Subscripcion.class.getName() + ".subscripcionesContactos", jcacheConfiguration);
+            cm.createCache(es.aldaba.gdpr.domain.SubscripcionInt.class.getName(), jcacheConfiguration);
+            cm.createCache(es.aldaba.gdpr.domain.Contacto.class.getName(), jcacheConfiguration);
+            cm.createCache(es.aldaba.gdpr.domain.Contacto.class.getName() + ".agrupaciones", jcacheConfiguration);
+            cm.createCache(es.aldaba.gdpr.domain.Contacto.class.getName() + ".subscripcionesContactos", jcacheConfiguration);
+            cm.createCache(es.aldaba.gdpr.domain.Contacto.class.getName() + ".aceptacionesLeys", jcacheConfiguration);
+            cm.createCache(es.aldaba.gdpr.domain.Contacto.class.getName() + ".trazasPeticions", jcacheConfiguration);
+            cm.createCache(es.aldaba.gdpr.domain.ContactoSubscripcion.class.getName(), jcacheConfiguration);
+            cm.createCache(es.aldaba.gdpr.domain.AceptaLey.class.getName(), jcacheConfiguration);
+            cm.createCache(es.aldaba.gdpr.domain.TrazaPeticion.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

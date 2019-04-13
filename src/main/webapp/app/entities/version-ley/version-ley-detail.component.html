@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="versionLey">
+            <h2><span jhiTranslate="gdprLozanoApp.versionLey.detail.title">Version Ley</span> {{versionLey.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="gdprLozanoApp.versionLey.version">Version</span></dt>
+                <dd>
+                    <span>{{versionLey.version}}</span>
+                </dd>
+                <dt><span jhiTranslate="gdprLozanoApp.versionLey.fechaDesde">Fecha Desde</span></dt>
+                <dd>
+                    <span>{{versionLey.fechaDesde}}</span>
+                </dd>
+                <dt><span jhiTranslate="gdprLozanoApp.versionLey.ley">Ley</span></dt>
+                <dd>
+                    <div *ngIf="versionLey.ley">
+                        <a [routerLink]="['/ley', versionLey.ley?.id, 'view']">{{versionLey.ley?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/version-ley', versionLey.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

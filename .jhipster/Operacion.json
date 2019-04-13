@@ -1,0 +1,41 @@
+{
+    "name": "Operacion",
+    "fields": [
+        {
+            "fieldName": "codigo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "wsAsociado",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tipo",
+            "fieldType": "TipoOperacion",
+            "fieldValues": "GET,POST,PUT,DELETE,JDSFKJEF"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "sistema",
+            "otherEntityRelationshipName": "operaciones",
+            "relationshipName": "sistema"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "agrupacion",
+            "otherEntityRelationshipName": "operaciones",
+            "relationshipName": "agrupacion"
+        }
+    ],
+    "changelogDate": "20190413221635",
+    "entityTableName": "operacion",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

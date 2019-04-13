@@ -1,0 +1,63 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-ley-heading" jhiTranslate="gdprLozanoApp.ley.home.createOrEditLabel">Create or edit a Ley</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!ley.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="ley.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gdprLozanoApp.ley.codigo" for="field_codigo">Codigo</label>
+                    <input type="text" class="form-control" name="codigo" id="field_codigo"
+                        [(ngModel)]="ley.codigo" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gdprLozanoApp.ley.tipologia" for="field_tipologia">Tipologia</label>
+                    <select class="form-control" name="tipologia" [(ngModel)]="ley.tipologia" id="field_tipologia" >
+                        <option value="REQUIERE_CONFIRMACION">{{'gdprLozanoApp.Tipologia.REQUIERE_CONFIRMACION' | translate}}</option>
+                        <option value="NO_REQUIERE_CONFIRMACION">{{'gdprLozanoApp.Tipologia.NO_REQUIERE_CONFIRMACION' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gdprLozanoApp.ley.requiereAnonimizacion" for="field_requiereAnonimizacion">Requiere Anonimizacion</label>
+                    <input type="checkbox" class="form-control" name="requiereAnonimizacion" id="field_requiereAnonimizacion"
+                        [(ngModel)]="ley.requiereAnonimizacion" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gdprLozanoApp.ley.plazoAnonimizado" for="field_plazoAnonimizado">Plazo Anonimizado</label>
+                    <input type="number" class="form-control" name="plazoAnonimizado" id="field_plazoAnonimizado"
+                        [(ngModel)]="ley.plazoAnonimizado" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gdprLozanoApp.ley.aplicaAPais" for="field_aplicaAPais">Aplica A Pais</label>
+                    <input type="checkbox" class="form-control" name="aplicaAPais" id="field_aplicaAPais"
+                        [(ngModel)]="ley.aplicaAPais" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gdprLozanoApp.ley.codPais" for="field_codPais">Cod Pais</label>
+                    <input type="text" class="form-control" name="codPais" id="field_codPais"
+                        [(ngModel)]="ley.codPais" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gdprLozanoApp.ley.tipoLey" for="field_tipoLey">Tipo Ley</label>
+                    <select class="form-control" id="field_tipoLey" name="tipoLey" [(ngModel)]="ley.tipoLey" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="tipoLeyOption.id === ley.tipoLey?.id ? ley.tipoLey : tipoLeyOption" *ngFor="let tipoLeyOption of tipolies; trackBy: trackTipoLeyById">{{tipoLeyOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

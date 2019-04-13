@@ -1,0 +1,26 @@
+{
+    "gdprLozanoApp": {
+        "aceptaLey": {
+            "home": {
+                "title": "Acepta Leys",
+                "createLabel": "Create a new Acepta Ley",
+                "createOrEditLabel": "Create or edit a Acepta Ley"
+            },
+            "created": "A new Acepta Ley is created with identifier {{ param }}",
+            "updated": "A Acepta Ley is updated with identifier {{ param }}",
+            "deleted": "A Acepta Ley is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Acepta Ley {{ id }}?"
+            },
+            "detail": {
+                "title": "Acepta Ley"
+            },
+            "enviada": "Enviada",
+            "fechaEnvio": "Fecha Envio",
+            "aceptada": "Aceptada",
+            "fechaAceptacion": "Fecha Aceptacion",
+            "contacto": "Contacto",
+            "versionLey": "Version Ley"
+        }
+    }
+}

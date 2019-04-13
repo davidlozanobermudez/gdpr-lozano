@@ -1,0 +1,12 @@
+{
+    "gdprLozanoApp": {
+        "TipoOperacion": {
+            "null": "",
+            "GET": "GET",
+            "POST": "POST",
+            "PUT": "PUT",
+            "DELETE": "DELETE",
+            "JDSFKJEF": "JDSFKJEF"
+        }
+    }
+}

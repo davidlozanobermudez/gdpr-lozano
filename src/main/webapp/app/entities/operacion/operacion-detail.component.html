@@ -1,0 +1,35 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="operacion">
+            <h2><span jhiTranslate="gdprLozanoApp.operacion.detail.title">Operacion</span> {{operacion.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="gdprLozanoApp.operacion.codigo">Codigo</span></dt>
+                <dd>
+                    <span>{{operacion.codigo}}</span>
+                </dd>
+                <dt><span jhiTranslate="gdprLozanoApp.operacion.wsAsociado">Ws Asociado</span></dt>
+                <dd>
+                    <span>{{operacion.wsAsociado}}</span>
+                </dd>
+                <dt><span jhiTranslate="gdprLozanoApp.operacion.tipo">Tipo</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'gdprLozanoApp.TipoOperacion.' + operacion.tipo}}">{{operacion.tipo}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/operacion', operacion.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

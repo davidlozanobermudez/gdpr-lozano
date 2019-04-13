@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Agrupacion.
+    -->
+    <changeSet id="20190413221634-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="agrupacion_id"
+                                 baseTableName="agrupacion_leyes"
+                                 constraintName="fk_agrupacion_leyes_agrupacion_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="agrupacion"/>
+        <addForeignKeyConstraint baseColumnNames="leyes_id"
+                                 baseTableName="agrupacion_leyes"
+                                 constraintName="fk_agrupacion_leyes_leyes_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ley"/>
+        
+        <addForeignKeyConstraint baseColumnNames="operaciones_id"
+                                 baseTableName="agrupacion"
+                                 constraintName="fk_agrupacion_operaciones_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="operacion"/>
+
+    </changeSet>
+</databaseChangeLog>

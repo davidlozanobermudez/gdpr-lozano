@@ -1,0 +1,22 @@
+{
+    "gdprLozanoApp": {
+        "sistema": {
+            "home": {
+                "title": "Sistemas",
+                "createLabel": "Crear nuevo Sistema",
+                "createOrEditLabel": "Crear o editar Sistema"
+            },
+            "created": "Un nuevo Sistema ha sido creado con el identificador {{ param }}",
+            "updated": "Un Sistema ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Sistema ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Sistema {{ id }}?"
+            },
+            "detail": {
+                "title": "Sistema"
+            },
+            "nombre": "Nombre",
+            "operaciones": "Operaciones"
+        }
+    }
+}

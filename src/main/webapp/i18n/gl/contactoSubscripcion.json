@@ -1,0 +1,23 @@
+{
+    "gdprLozanoApp": {
+        "contactoSubscripcion": {
+            "home": {
+                "title": "ContactoSubscripcions",
+                "createLabel": "Crear novo Contacto Subscripcion",
+                "createOrEditLabel": "Crear ou editar Contacto Subscripcion"
+            },
+            "created": "Un novo Contacto Subscripcion foi creado co identificador {{ param }}",
+            "updated": "Un Contacto Subscripcion foi actualizado co identificador {{ param }}",
+            "deleted": "Un Contacto Subscripcion foi eliminado co identificador {{ param }}",
+            "delete": {
+                "question": "Seguro que desexa eliminar Contacto Subscripcion {{ id }}?"
+            },
+            "detail": {
+                "title": "Contacto Subscripcion"
+            },
+            "fecha": "Fecha",
+            "contacto": "Contacto",
+            "subscripcion": "Subscripcion"
+        }
+    }
+}

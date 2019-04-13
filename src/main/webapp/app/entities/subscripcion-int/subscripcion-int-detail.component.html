@@ -1,0 +1,47 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="subscripcionInt">
+            <h2><span jhiTranslate="gdprLozanoApp.subscripcionInt.detail.title">Subscripcion Int</span> {{subscripcionInt.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="gdprLozanoApp.subscripcionInt.codLanguage">Cod Language</span></dt>
+                <dd>
+                    <span>{{subscripcionInt.codLanguage}}</span>
+                </dd>
+                <dt><span jhiTranslate="gdprLozanoApp.subscripcionInt.nombre">Nombre</span></dt>
+                <dd>
+                    <span>{{subscripcionInt.nombre}}</span>
+                </dd>
+                <dt><span jhiTranslate="gdprLozanoApp.subscripcionInt.descripcion">Descripcion</span></dt>
+                <dd>
+                    <span>{{subscripcionInt.descripcion}}</span>
+                </dd>
+                <dt><span jhiTranslate="gdprLozanoApp.subscripcionInt.subscripcion">Subscripcion</span></dt>
+                <dd>
+                    <div *ngIf="subscripcionInt.subscripcion">
+                        <a [routerLink]="['/subscripcion', subscripcionInt.subscripcion?.id, 'view']">{{subscripcionInt.subscripcion?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="gdprLozanoApp.subscripcionInt.language">Language</span></dt>
+                <dd>
+                    <div *ngIf="subscripcionInt.language">
+                        <a [routerLink]="['/language', subscripcionInt.language?.id, 'view']">{{subscripcionInt.language?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/subscripcion-int', subscripcionInt.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

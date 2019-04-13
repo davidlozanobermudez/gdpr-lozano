@@ -1,0 +1,10 @@
+{
+    "gdprLozanoApp": {
+        "StatusContacto": {
+            "null": "",
+            "ACTIVO": "ACTIVO",
+            "PENDIENTE_ANONIMIZACION": "PENDIENTE_ANONIMIZACION",
+            "RECHAZADO": "RECHAZADO"
+        }
+    }
+}

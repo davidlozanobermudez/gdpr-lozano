@@ -1,0 +1,25 @@
+{
+    "gdprLozanoApp": {
+        "operacion": {
+            "home": {
+                "title": "Operacions",
+                "createLabel": "Create a new Operacion",
+                "createOrEditLabel": "Create or edit a Operacion"
+            },
+            "created": "A new Operacion is created with identifier {{ param }}",
+            "updated": "A Operacion is updated with identifier {{ param }}",
+            "deleted": "A Operacion is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Operacion {{ id }}?"
+            },
+            "detail": {
+                "title": "Operacion"
+            },
+            "codigo": "Codigo",
+            "wsAsociado": "Ws Asociado",
+            "tipo": "Tipo",
+            "sistema": "Sistema",
+            "agrupacion": "Agrupacion"
+        }
+    }
+}

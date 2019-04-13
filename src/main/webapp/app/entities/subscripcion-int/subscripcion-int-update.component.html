@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-subscripcion-int-heading" jhiTranslate="gdprLozanoApp.subscripcionInt.home.createOrEditLabel">Create or edit a Subscripcion Int</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!subscripcionInt.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="subscripcionInt.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gdprLozanoApp.subscripcionInt.codLanguage" for="field_codLanguage">Cod Language</label>
+                    <input type="text" class="form-control" name="codLanguage" id="field_codLanguage"
+                        [(ngModel)]="subscripcionInt.codLanguage" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gdprLozanoApp.subscripcionInt.nombre" for="field_nombre">Nombre</label>
+                    <input type="text" class="form-control" name="nombre" id="field_nombre"
+                        [(ngModel)]="subscripcionInt.nombre" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gdprLozanoApp.subscripcionInt.descripcion" for="field_descripcion">Descripcion</label>
+                    <input type="text" class="form-control" name="descripcion" id="field_descripcion"
+                        [(ngModel)]="subscripcionInt.descripcion" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gdprLozanoApp.subscripcionInt.subscripcion" for="field_subscripcion">Subscripcion</label>
+                    <select class="form-control" id="field_subscripcion" name="subscripcion" [(ngModel)]="subscripcionInt.subscripcion" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="subscripcionOption.id === subscripcionInt.subscripcion?.id ? subscripcionInt.subscripcion : subscripcionOption" *ngFor="let subscripcionOption of subscripcions; trackBy: trackSubscripcionById">{{subscripcionOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gdprLozanoApp.subscripcionInt.language" for="field_language">Language</label>
+                    <select class="form-control" id="field_language" name="language" [(ngModel)]="subscripcionInt.language" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="languageOption.id === subscripcionInt.language?.id ? subscripcionInt.language : languageOption" *ngFor="let languageOption of languages; trackBy: trackLanguageById">{{languageOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

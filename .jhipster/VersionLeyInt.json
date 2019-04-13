@@ -1,0 +1,41 @@
+{
+    "name": "VersionLeyInt",
+    "fields": [
+        {
+            "fieldName": "codLanguage",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nombre",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "descripcion",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "versionLey",
+            "otherEntityName": "versionLey",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "language",
+            "otherEntityRelationshipName": "versionLeyInt",
+            "relationshipName": "language",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190413221639",
+    "entityTableName": "version_ley_int",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

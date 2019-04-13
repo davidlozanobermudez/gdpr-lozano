@@ -1,0 +1,45 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="trazaPeticion">
+            <h2><span jhiTranslate="gdprLozanoApp.trazaPeticion.detail.title">Traza Peticion</span> {{trazaPeticion.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="gdprLozanoApp.trazaPeticion.tipoNotificacion">Tipo Notificacion</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'gdprLozanoApp.TipoNotificacion.' + trazaPeticion.tipoNotificacion}}">{{trazaPeticion.tipoNotificacion}}</span>
+                </dd>
+                <dt><span jhiTranslate="gdprLozanoApp.trazaPeticion.nombreOperacion">Nombre Operacion</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'gdprLozanoApp.NombreOperacion.' + trazaPeticion.nombreOperacion}}">{{trazaPeticion.nombreOperacion}}</span>
+                </dd>
+                <dt><span jhiTranslate="gdprLozanoApp.trazaPeticion.fecha">Fecha</span></dt>
+                <dd>
+                    <span>{{trazaPeticion.fecha}}</span>
+                </dd>
+                <dt><span jhiTranslate="gdprLozanoApp.trazaPeticion.observaciones">Observaciones</span></dt>
+                <dd>
+                    <span>{{trazaPeticion.observaciones}}</span>
+                </dd>
+                <dt><span jhiTranslate="gdprLozanoApp.trazaPeticion.contacto">Contacto</span></dt>
+                <dd>
+                    <div *ngIf="trazaPeticion.contacto">
+                        <a [routerLink]="['/contacto', trazaPeticion.contacto?.id, 'view']">{{trazaPeticion.contacto?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/traza-peticion', trazaPeticion.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
