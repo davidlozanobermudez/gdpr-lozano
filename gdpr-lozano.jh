@@ -1,0 +1,143 @@
+entity Language {
+	codLanguage String
+    codRegion String
+    default Boolean
+}
+
+entity Sistema {
+	nombre String
+}
+
+entity Agrupacion {
+	codigo String
+	nombre String
+}
+
+entity Operacion {
+	codigo String
+    wsAsociado String
+    tipo TipoOperacion
+}
+
+entity TipoLey {
+	descripcion String
+}
+
+entity Ley {
+	codigo String
+    tipologia Tipologia
+    requiereAnonimizacion Boolean
+    plazoAnonimizado Integer
+    aplicaAPais Boolean
+    codPais String
+}
+
+entity VersionLey {
+	version String
+    fechaDesde LocalDate
+}
+
+entity VersionLeyInt {
+	codLanguage String
+    nombre String
+    descripcion String
+}
+
+entity Subscripcion {
+	codigo String
+}
+
+entity SubscripcionInt {
+	codLanguage String
+    nombre String
+    descripcion String
+}
+
+entity Contacto {
+	idCuenta String
+    status StatusContacto
+    email String
+    telefono String
+    codPais String
+    codIdoma String
+}
+
+entity ContactoSubscripcion {
+	fecha Instant
+}
+
+entity AceptaLey {
+	enviada Boolean required
+    fechaEnvio Instant
+    aceptada Boolean
+    fechaAceptacion Instant
+}
+
+entity TrazaPeticion {
+	tipoNotificacion TipoNotificacion
+    nombreOperacion NombreOperacion
+    fecha Instant
+    observaciones String
+}
+
+enum TipoOperacion {
+	GET, POST, PUT, DELETE, JDSFKJEF
+}
+
+enum Tipologia {
+	REQUIERE_CONFIRMACION,
+    NO_REQUIERE_CONFIRMACION
+}
+
+enum StatusContacto {
+	ACTIVO,
+    PENDIENTE_ANONIMIZACION,
+    RECHAZADO
+}
+
+enum TipoNotificacion {
+	EMAIL,
+    TELEFONO,
+    SISTEMA,
+    SMS,
+    WS
+}
+
+enum NombreOperacion {
+        ACEPTACION_VERSION_LEY,
+        ALTA_SUBSCRIPCION,
+        ANONIMIZACION_CONTACTO,
+        BAJA_SUBSCRIPCION,
+        CONFIRMADA_BAJA_LEY,
+        CONSULTA_ESTADO_LEY,
+        CREACION_CONTACTO,
+        DECLINACION_CONTACTO,
+        DECLINACION_VERSION_LEY,
+        ENVIO_LEY,
+        RECHAZO_ACEPTA_LEY_POR_VENCIMIENTO,
+        SOLICITUD_BAJA_LEY
+}
+
+relationship ManyToOne {
+	Ley{tipoLey} to TipoLey{leyes}
+    VersionLey{ley} to Ley{versiones}
+    VersionLeyInt to Language
+    SubscripcionInt to Language
+    ContactoSubscripcion{contacto} to Contacto{subscripcionesContacto}
+    ContactoSubscripcion{subscripcion} to Subscripcion{subscripcionesContacto}
+    AceptaLey{contacto} to Contacto{aceptacionesLey}
+    AceptaLey{versionLey} to VersionLey{aceptacionesLey}
+    TrazaPeticion{contacto} to Contacto{trazasPeticion}
+}
+
+relationship OneToMany {
+	Operacion{sistema} to Sistema{operaciones}
+    Operacion{agrupacion} to Agrupacion{operaciones}
+    VersionLey{langs} to VersionLeyInt
+    Subscripcion{langs} to SubscripcionInt
+}
+
+relationship ManyToMany {
+	Agrupacion{leyes} to Ley{agrupaciones}
+    Contacto{agrupaciones} to Agrupacion{contactos}
+}
